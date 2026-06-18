@@ -31,7 +31,7 @@ export function InputBar({ onSubmit, disabled = false }: Props) {
   const toast = useToast();
   const dialog = useDialog();
   const { isTopLayer, setResponder } = useKeyboardLayer();
-  const {colors} = useTheme();
+  const { colors } = useTheme();
 
   const {
     showCommandMenu,
@@ -79,7 +79,7 @@ export function InputBar({ onSubmit, disabled = false }: Props) {
         textarea.insertText(command.value + " ");
       }
     },
-    [renderer, toast],
+    [renderer, toast, dialog],
   );
   const handleTextareaContentChange = useCallback(() => {
     const textarea = textareaRef.current;
@@ -124,7 +124,7 @@ export function InputBar({ onSubmit, disabled = false }: Props) {
     <box width="100%" alignItems="center">
       <box
         border={["left"]}
-        borderColor= {colors.primary}
+        borderColor={colors.primary}
         customBorderChars={{
           ...EmptyBorder,
           vertical: "┃",
@@ -136,7 +136,7 @@ export function InputBar({ onSubmit, disabled = false }: Props) {
           justifyContent="center"
           paddingX={2}
           paddingY={1}
-          borderColor= {colors.surface}
+          borderColor={colors.surface}
           width="100%"
           gap={1}
         >
@@ -146,7 +146,7 @@ export function InputBar({ onSubmit, disabled = false }: Props) {
               bottom="100%"
               left={0}
               width="100%"
-              borderColor= {colors.surface}
+              borderColor={colors.surface}
               zIndex={10}
             >
               <CommandMenu
