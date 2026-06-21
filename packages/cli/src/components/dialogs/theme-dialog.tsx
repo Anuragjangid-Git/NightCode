@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef } from "react";
 import { useDialog } from "../../providers/dialog";
 import { useTheme } from "../../providers/theme";
-import { DialogSearchList } from "../dialog-search-list";
+import { DialogSearchList } from "../common/dialog-search-list";
 import { THEMES } from "../../theme";
 import type { Theme } from "../../theme";
 

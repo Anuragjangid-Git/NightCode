@@ -1,16 +1,15 @@
-import type { KeyBinding } from "@opentui/core";
-import { EmptyBorder } from "./border";
-import { StatusBar } from "./status-bar";
-import { CommandMenu } from "./command-menu";
-import { useRef, useEffect, useCallback } from "react";
-import type { Command } from "./command-menu/types";
+import type { KeyBinding, TextareaRenderable } from "@opentui/core";
 import { useRenderer } from "@opentui/react";
-import { TextareaRenderable } from "@opentui/core";
-import { useCommandMenu } from "./command-menu/use-command-menu";
-import { useToast } from "../providers/toast";
-import { useKeyboardLayer } from "../providers/keyboard-layer";
-import { useDialog } from "../providers/dialog";
-import { useTheme } from "../providers/theme";
+import { useCallback, useEffect, useRef } from "react";
+import { useToast } from "../../providers/toast";
+import { useDialog } from "../../providers/dialog";
+import { useKeyboardLayer } from "../../providers/keyboard-layer";
+import { useTheme } from "../../providers/theme";
+import { useCommandMenu } from "../command-menu/use-command-menu";
+import type { Command } from "../command-menu/types";
+import { EmptyBorder } from "./border";
+import { CommandMenu } from "../command-menu";
+import { StatusBar } from "./status-bar";
 
 type Props = {
   onSubmit: (text: string) => void;
